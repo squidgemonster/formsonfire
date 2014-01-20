@@ -1,0 +1,305 @@
+/* CSS Reset [Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html] - v2.0 | 20110126
+-------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height:1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {/* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Additional Template Specific Reset
+-------------------------------------------------------------- */
+
+/* ClearFix
+-------------------------------------------------------------- */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; } /* for IE only */
+		 
+/* Global
+-------------------------------------------------------------- */
+		 
+html {font-size:16px; background:#fff;}
+
+body {
+	font:1em/1.3 'Lato', sans-serif;
+	color:#fff;
+	padding-top:40px;
+	/* font-smooth:auto; 
+	-webkit-font-smoothing: antialiased; */
+}
+
+a, a:hover, a:active {outline:0;}
+
+form {
+	color:#333;
+}
+
+fieldset {
+	margin:20px auto;
+	width:900px;
+	padding:30px;
+	border:2px solid rgba(0,0,0,0.1);
+	border-radius:3px;
+}
+
+legend {
+	background:rgba(0,0,0,0.1);
+	padding:10px;
+	font-size:10px;
+	text-transform:uppercase;
+	color:#666;
+	border-radius:3px;
+}
+
+.FoF-Dotted {
+	position:relative;
+	margin:1rem 0;
+}
+
+.FoF-Dotted .req {
+	color:red;
+}
+
+.FoF-Dotted.textarea {
+	float:right;
+}
+
+.FoF-Dotted input {
+	border:0;
+	border-bottom:2px solid transparent;
+	background:#f4f4f4;
+	font-family:'Lato';
+	font-size:1rem;
+	padding:0.5rem 0.5rem 0.5rem 0.5rem;
+	min-width:300px;
+	position:relative;
+	z-index:10;
+}
+
+.FoF-Dotted input {
+	transition:background 0.5s, border 0.5s;
+}
+
+.FoF-Dotted input:focus, .FoF-Dotted input.on {
+	background:transparent;
+	border-color:#4090c3;
+	outline:0;
+	padding:0.75rem 0.5rem 0.25rem 0.5rem;
+}
+
+.FoF-Dotted input.on {
+	border-color:#efefef;
+}
+
+.FoF-Dotted input.on:focus {
+	border-color:#4090c3;
+}
+
+.FoF-Dotted label {
+	display:none;
+	position:absolute;
+	bottom:-0.85rem;
+	left:0.55rem;
+	z-index:5;
+	font-size:11px;
+	text-transform:uppercase;
+	color:#999;
+}
+
+.FoF-Dotted textarea {
+	width:360px;
+	border:0;
+	background:#f2f2f2;
+	resize:none;
+}
+
+
+.FoF textarea, .FoF input {outline:none;}
+
+.FoF input[type="radio"], .FoF input[type="checkbox"], .FoF label {
+	display:none;
+}
+
+.FoF input[type="text"] {
+	border:0;
+	padding:8px;
+	width:284px;
+}
+
+
+.FoF-label {
+	margin:5px 20px;
+	cursor:pointer;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	width:300px;
+	text-align:right;
+}
+
+.FoF-label.radio, .FoF-label.checkbox {
+	margin:5px 0;
+	cursor:pointer;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	width:auto;
+	text-align:left;
+}
+
+.FoF.on .FoF-label.radio, .FoF.on .FoF-label.checkbox {
+	color:#222;
+}
+
+.FoF.off .FoF-label.radio, .FoF.off .FoF-label.checkbox {
+	color:#666;
+}
+
+.FoF.off .FoF-label.radio .FoF-radio-selector, .FoF.off .FoF-label.checkbox .FoF-checkbox-selector {
+	display:none;
+}
+
+	.FoF.off .FoF-label.radio:hover, .FoF.off .FoF-label.checkbox:hover {
+		color:#222;
+	}
+
+.FoF.off .FoF-label.radio:hover .FoF-radio, .FoF.on .FoF-label.radio:hover .FoF-radio {
+	background:#30729c;
+}
+
+.FoF.off .FoF-label.checkbox:hover .FoF-checkbox, .FoF.on .FoF-label.checkbox:hover .FoF-checkbox {
+	border-color:#30729c;
+}
+
+.FoF.disabled .FoF-label.radio, .FoF.disabled .FoF-label.checkbox {
+	color:#999 !important;
+	cursor:default;
+}
+
+.FoF.disabled .FoF-label.radio .FoF-radio {
+	background:#ccc !important;
+}
+
+.FoF.disabled .FoF-label.checkbox .FoF-checkbox {
+	border-color:#ccc !important;
+}
+
+.FoF-radio {
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	width:20px;
+	height:20px;
+	background:#4090c3;
+	border-radius:100px;
+	vertical-align:middle;
+	margin:-3px 3px 0 3px;
+	position:relative;
+}
+
+.FoF-checkbox {
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	width:16px;
+	height:16px;
+	background:#fff;
+	vertical-align:middle;
+	margin:-3px 3px 0 3px;
+	position:relative;
+	border:2px solid #4090c3;
+}
+
+.FoF-radio-selector {
+	position:absolute;
+	top:5px;
+	left:5px;
+	display:block;
+	width:10px;
+	height:10px;
+	background:#fff;
+	border-radius:100px;
+}
+
+.FoF-checkbox-selector {
+	position:absolute;
+	top:0;
+	left:0;
+	display:block;
+	width:16px;
+	height:16px;
+	background:#fff url(check.png) no-repeat top left;
+}
+
+.FoF-text-border {
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	border:3px solid #4090c3;
+	border-radius:3px;
+	margin:2px 0;
+}
+
+.focus .FoF-text-border {
+	border-color:#30729c;
+}
+
+.FoF.disabled .FoF-label, .FoF.disabled .FoF-text-border {
+	border-color:#ccc;
+	color:#999;
+}
+
+.FoF.disabled .FoF-label, .FoF.disabled input[type="text"] {
+	cursor:default !important;
+}
+
+.FoF.required .FoF-label.text:before {
+	content:"* ";
+}
+
+/* Main Body Structure
+-------------------------------------------------------------- */
