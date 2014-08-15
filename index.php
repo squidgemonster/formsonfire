@@ -69,7 +69,14 @@
 	<fieldset>
 		<legend>Form legend goes here...</legend>
 
-		<div class="FoF on">
+		<label for="male">Male</label>
+			<input type="checkbox" name="sex" value="male" id="male" class="FoF" checked />
+
+		<label>Female</label>
+			<input type="checkbox" name="sex" value="female" id="female" class="FoF" checked />
+
+
+		<!-- <div class="FoF on">
 			<div class="FoF-label checkbox">
 				<div class="FoF-checkbox">
 					<div class="FoF-checkbox-selector"></div>
@@ -179,12 +186,13 @@
 		    		<input type="text" name="size" id="size_1" placeholder="Label goes here..." />
 		    	</span>
 		    <label for="size_1">Small</label>
-	    </div>
+	    </div> -->
 
 	</fieldset>
 
 </form>
-	
+
+<script src="forms-on-fire.js" />
 <script>
 $(document).ready(function () { 
 
