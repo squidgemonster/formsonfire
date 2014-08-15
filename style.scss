@@ -27,7 +27,11 @@ body {
   height:100%; // May muck-up stuff!
 }
 
-textarea, input {outline:none;} // remove webkit glow
+textarea, input {
+  outline:none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+} // remove webkit glow and ios form styling oddities!
 
 * {
   -moz-box-sizing:border-box;
@@ -188,7 +192,7 @@ legend {
       }
 
       input[type=checkbox]:focus:checked + i {
-        
+
         &.switch {
           background:darken($active, 10%);
 

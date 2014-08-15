@@ -44,7 +44,7 @@
 
 				<div class="fof-element">
 					<label for="fof_date">Pick a date</label>
-					<input type="date" name="fof_date" id="fof_date" placeholder="Pick a date" />
+					<input type="date" name="fof_date" id="fof_date" placeholder="Pick a date" value="<?php echo date('m/d/Y'); ?>" />
 				</div>
 
 				<div class="fof-element">
