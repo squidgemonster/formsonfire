@@ -1,0 +1,279 @@
+@import "normalise"; // Standardise elements
+
+// Modern clearfix hack http://css-tricks.com/snippets/css/clear-fix/ for IE8+
+.group:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+$active:#0084ab;
+$toggle:silver;
+
+html {
+  font-size:100%;
+  height:10%; // May muck-up stuff!
+}
+
+body {
+  font-family:'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight:400;
+  font-size:0.875rem; // 14 px
+  line-height:1.5em;
+
+  background:#f8f8f8;
+  color:#333;
+
+  height:100%; // May muck-up stuff!
+}
+
+textarea, input {outline:none;} // remove webkit glow
+
+* {
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+section {
+  max-width:348px;
+  width:100%;
+  margin:1rem auto;
+  padding:1.5rem;
+  padding-left:0.5rem;
+  padding-right:0.5rem;
+  background:#f1f1f1;
+  border-radius:4px;
+
+  @media only screen and (min-width:349px) {
+    padding:1.5rem;
+  }
+
+}
+
+fieldset {
+  border:0;
+  margin:0;
+  padding:0;
+}
+
+legend {
+  padding-bottom:0.5rem;
+  font-size:1.1rem;
+  width:100%;
+  border-bottom:1px solid silver;
+}
+
+.fof-element {
+  margin:0.8rem 0;
+
+  .label {
+    display:block;
+    margin-bottom:0.5rem;
+  }
+
+    input:disabled ~ i {
+      opacity:0.5;
+      cursor:default;
+    }
+
+    input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio]), .fof-select, .fof-select select {
+      display:block;
+      // max-width:300px; // Suggest you set this if you're not having a fixed width column...
+      width:100%;
+      padding:0.5rem;
+      border:1px solid silver;
+
+      &:focus {
+        border-color:$active;
+        -webkit-transition:border-color 0.2s;
+        -moz-transition:border-color 0.2s;
+        -o-transition:border-color 0.2s;
+        -ms-transition:border-color 0.2s;
+        transition:border-color 0.2s;
+      }
+
+    }
+
+    label {
+      display:inline-block;
+      vertical-align:middle;
+      cursor:pointer;
+
+      input[type=checkbox], input[type=radio] {
+        opacity:1; // for debug you can switch this to 1 and remove the z-index to see input element
+        z-index:-1;
+        position:absolute;
+      }
+
+      input[type=checkbox] ~ i, input[type=radio] ~ i {
+        display:inline-block;
+        vertical-align:middle;
+        width:1.5rem;
+        height:1.5rem;
+        border:0.1875rem solid $toggle;
+        background:white;
+        border-radius:0.25rem;
+        margin-right:1rem;
+        -webkit-transition:background 0.2s;
+        -moz-transition:background 0.2s;
+        -o-transition:background 0.2s;
+        -ms-transition:background 0.2s;
+        transition:background 0.2s;
+
+        &.switch {
+          border:0;
+          background:$toggle;
+          border-radius:100px;
+          width:50px;
+          position:relative;
+          height:26px;
+          margin:0;
+          margin-left:0.5rem;
+
+          &:after {
+            content:'';
+            display:block;
+            width:24px;
+            height:24px;
+            border:1px solid $toggle;
+            background:white;
+            border-radius:100px;
+            position:absolute;
+            top:0;
+            left:0;
+            margin-left:0;
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            -ms-transition: all 0.2s;
+            transition: all 0.2s;
+          }
+
+        }
+
+      }
+
+      input[type=radio] ~ i {
+        border-radius:100px;
+        border-width:0.35rem;
+      }
+
+      input[type=checkbox]:checked + i, input[type=radio]:checked + i, , input[type=checkbox]:checked + i.switch {
+        background:$active;
+
+         &.switch {
+
+          &:after {
+            border-color:$active;
+            left:100%;
+            margin-left:-26px;
+          }
+
+        }
+
+      }
+
+      input[type=checkbox]:focus + i, input[type=radio]:focus + i {
+        border-color:darken($toggle, 10%); // For accessiblity, and to allow easy tabbing through the form change state of focused inputs
+
+        &.switch {
+          background:darken($toggle, 10%);
+
+          &:after {
+            border-color:darken($toggle, 10%);
+          }
+
+        }
+
+      }
+
+      input[type=checkbox]:focus:checked + i {
+        
+        &.switch {
+          background:darken($active, 10%);
+
+          &:after {
+            border-color:darken($active, 10%);
+          }
+
+        }
+
+      }
+
+    }
+
+    &.list {
+      margin:1rem 0;
+
+      label {
+        display:block;
+        margin:0.5rem 0;
+
+        input[type=checkbox] ~ i, input[type=radio] ~ i {
+          margin-right:0.2rem;
+        }
+
+      }
+
+    }
+
+    .fof-select {
+      position:relative;
+      background:white;
+      padding:0;
+
+      select {
+        border:none;
+        box-shadow:none;
+        background:transparent;
+        background-image:none;
+        -webkit-appearance:none;
+        -moz-appearance:none;
+
+        cursor:pointer;
+        padding:0.45rem;
+
+      }
+
+      select::-ms-expand {
+        display:none;
+      }
+
+      &:after {
+        // content:'';
+        // width:100px;
+        // height:100px;
+        // display:block;
+        // background:pink;
+        // position:absolute;
+        // top:0;
+        // right:0;
+      }
+
+    }
+
+    select:focus {
+      outline:none;
+    }
+
+}
+
+button, .button {
+  width:100%;
+  background:$active;
+  text-align:center;
+  border:0;
+  padding:0.5rem;
+  color:white;
+  border-radius:4px;
+
+  &:hover {
+    background:lighten($active, 5%);
+    -webkit-transition:background 0.2s;
+    -moz-transition:background 0.2s;
+    -o-transition:background 0.2s;
+    -ms-transition:background 0.2s;
+    transition:background 0.2s;
+  }
+
+}
