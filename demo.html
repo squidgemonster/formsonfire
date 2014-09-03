@@ -14,7 +14,7 @@
 <meta name="viewport" content="user-scalable=no,initial-scale=1.0,maximum-scale=1.0">
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="stylesheet" href="demo.css?v=1">
 
 </head>
 
@@ -33,7 +33,7 @@
 					<input type="text" name="fof_name" id="fof_name" placeholder="Full name" />
 				</div>
 
-				<div class="fof-element">
+				<!-- <div class="fof-element">
 					<label for="fof_email">Email address</label>
 					<input type="email" name="fof_email" id="fof_email" placeholder="Email address" />
 				</div>
@@ -41,17 +41,17 @@
 				<div class="fof-element">
 					<label for="fof_tel">Contact number</label>
 					<input type="tel" name="fof_tel" id="fof_tel" placeholder="Contact phone number" />
-				</div>
+				</div> -->
 
 				<div class="fof-element">
 					<label for="fof_date">Pick a date</label>
-					<input type="date" name="fof_date" id="fof_date" placeholder="Pick a date" value="<?php echo date('Y-m-d'); ?>" />
+					<input type="date" name="fof_date" id="fof_date" placeholder="Pick a date" />
 				</div>
 
-				<div class="fof-element">
+				<!-- <div class="fof-element">
 					<label for="fof_zip">Zip / Postal code</label>
 					<input type="text" name="fof_zip" id="fof_zip" placeholder="Zip / Postal Code" />
-				</div>
+				</div> -->
 
 				<div class="fof-element">
 					<label for="fof-select" class="label">Select an option</label>
@@ -63,6 +63,7 @@
 								<option>Select this option 03</option>
 								<option>Select this option 04</option>
 							</select>
+							<i></i>
 						</div>
 				</div>
 
@@ -167,16 +168,20 @@
 	</form>
 
 </section>
-<script src="fastclick.js" />
+
+<script src="fastclick.js" /></script>
 <script>
-window.addEventListener('load', function() {
-    FastClick.attach(document.body);
-}, false);
-mySelectedElement.onclick = function(e){
-    if (e.offsetX > span.offsetWidth) {
-        span.className = 'c2';
-    }
-}
+// window.addEventListener('load', function() {
+//     FastClick.attach(document.body);
+// }, false);
+
+// Prepoulate your date field
+Date.prototype.toDateInputValue = (function() {
+    var local = new Date(this);
+    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+    return local.toJSON().slice(0,10);
+});
+document.getElementById('fof_date').value = new Date().toDateInputValue();
 </script>
 </body>
 </html>

@@ -1,9 +1,11 @@
 FormsOnFire
 ===========
 
+To Do - link to example and more detailed description of elements.
+
 The main purpose of Forms on Fire is to create a base from which you can create your own styled form elements that are as consistant as possible across browsers.
 
-With [http://squidgemonster.github.io/formsonfire/latest/index.html](the example) I've aimed at a consistant approach for standard text inputs - including the 'date' input type. In an ideal world all browsers should have a baked-in date-picker (which this example assumes) if not, then feel free to use our friend Modernizr to detect and swap out with your preferred Js solution. I'd recommend that iOS/Android browsers use their default versions though (from experence!).
+I've aimed at a consistant approach for standard text inputs - including the 'date' input type. In an ideal world all browsers should have a baked-in date-picker (which this example assumes) if not, then feel free to use our friend Modernizr to detect and swap out with your preferred Js solution. I'd recommend that iOS/Android browsers use their default versions though (from experence!).
 
 The select input has potentially two states in the example, including an iOS-style switch toggle.
 

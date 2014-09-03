@@ -1,0 +1,7 @@
+---
+ name: Forms on Fire Demo
+ description: A simple demonstration of CSS only styling for forms
+ authors:
+   - David Kidger
+ normalize_css: no
+ ...
