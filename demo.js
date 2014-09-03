@@ -1,4 +1,3 @@
-// Prepoulate your date field
 Date.prototype.toDateInputValue = (function() {
     var local = new Date(this);
     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
