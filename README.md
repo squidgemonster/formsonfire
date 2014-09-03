@@ -1,9 +1,9 @@
 FormsOnFire
 ===========
 
-The main purpose of Forms on Fire is to create a base from which you can create your own styled form elements that are as consistant as possible across browsers - most notably, dropdowns, radio buttons and checkboxes.
+The main purpose of FormsOnFire is to create a base from which you can create your own styled form elements that are as consistant as possible across browsers - most notably, dropdowns, radio buttons and checkboxes.
 
-![Forms on Fire demo](https://github.com/squidgemonster/formsonfire/raw/master/preview.png)
+[![Forms on Fire demo](https://github.com/squidgemonster/formsonfire/raw/master/preview.png)](http://jsfiddle.net/gh/get/mootools/1.2/squidgemonster/formsonfire/tree/master/)
 
 Take a look at a [demo](http://jsfiddle.net/gh/get/mootools/1.2/squidgemonster/formsonfire/tree/master/).
 
