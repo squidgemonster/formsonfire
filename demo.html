@@ -169,19 +169,6 @@
 
 </section>
 
-<script src="fastclick.js" /></script>
-<script>
-// window.addEventListener('load', function() {
-//     FastClick.attach(document.body);
-// }, false);
-
-// Prepoulate your date field
-Date.prototype.toDateInputValue = (function() {
-    var local = new Date(this);
-    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-    return local.toJSON().slice(0,10);
-});
-document.getElementById('fof_date').value = new Date().toDateInputValue();
-</script>
+<script src="demo.js" /></script>
 </body>
 </html>
