@@ -22,7 +22,8 @@ Key Features
 
 All styling has been done in SCSS, with a normalise base - will work on a more condensed / readable css companion to this as well.
 
-Known Bugs
-----------
+Known Bugs / Issues
+-------------------
 
 - FastClick doesn't play nice with the checkbox / radio inputs
+- Dropdown pointer style is lost but gracefully degrades on Firefox and older IE versions
